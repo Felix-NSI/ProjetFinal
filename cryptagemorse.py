@@ -2,7 +2,7 @@
 """
 Created on Wed Apr 14 15:12:38 2021
 
-@author: Félix
+@author: Félix HUGUENIN
 """
 
 encorebesoinMorse=True
@@ -41,25 +41,25 @@ while encorebesoinMorse==True:
 
         for lettre in texte:  
             texteCryptéM+=cryptageLettreM(lettre,alphabetMorse)  
-            #print(cryptageLettreM(lettre,alphabetMorse))
+            
         
         print(texteCryptéM)
         
     if choix==2:
-        alphainvers = {'.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D', '.': 'E', '..-.': 'F', '--.': 'G', '....': 'H', '..': 'I', '.---': 'J', '-.-': 'K', '.-..': 'L', '--': 'M', '-.': 'N', '---': 'O', '.--.': 'P', '--.-': 'Q', '.-.': 'R', '...': 'S', '-': 'T', '..-': 'U', '...-': 'V', '.--': 'W', '-..-': 'X', '-.--': 'Y', '--..': 'Z', '~': ' '}                   
+        alphabetinvers = {'.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D', '.': 'E', '..-.': 'F', '--.': 'G', '....': 'H', '..': 'I', '.---': 'J', '-.-': 'K', '.-..': 'L', '--': 'M', '-.': 'N', '---': 'O', '.--.': 'P', '--.-': 'Q', '.-.': 'R', '...': 'S', '-': 'T', '..-': 'U', '...-': 'V', '.--': 'W', '-..-': 'X', '-.--': 'Y', '--..': 'Z', '~': ' '}                   
         texte=str(input('Quel est le texte a décrypter ?'))
         texteDecrypteM=str()
         texte=texte.split(' ')
-        print(texte)
+
 
         
         def decryptageMorse(symb,alphabetinvers):
-            retour = alphainvers[symb]
+            retour = alphabetinvers[symb]
             return retour
 
         for symb in texte:
             if symb!='':
-                texteDecrypteM+=decryptageMorse(symb,alphabetMorse)
+                texteDecrypteM+=decryptageMorse(symb,alphabetinvers)
             else : 
                 continue
         
