@@ -22,21 +22,21 @@ while encorebesoinR==True:
         texte=str(input('Quel est le texte a crypter ?'))  
 
         texteCrypteR=str()
-        def defcle(alphabetmin):
-            cle=''
+        def defcleR(alphabetmin):
+            cleR=''
             hasacle = randint(1,4)
             for i in range(hasacle):
-                cle += alphabetmin[randint(0,25)]
-            return cle
+                cleR += alphabetmin[randint(0,25)]
+            return cleR
         def cryptageR(texte,alphabetmin):
             nouvTexte = ''
             for a in texte:
-                nouvText+= a.upper()
+                nouvTexte+= a.upper()
 
             
             out = ''
-            cle = defcle(alphabetmin)
-            for n in texte:
+            cleR = defcleR(alphabetmin)
+            for lettre in nouvTexte:
                 bon = False
                 while bon==False:
                     hasa = randint(0,30)
@@ -44,11 +44,11 @@ while encorebesoinR==True:
                         out += lettre
                         bon = True
                     elif hasa >= 27:
-                        out += cle
+                        out += cleR
                         out += alphabetmaj[randint(0,25)]                                      
                     else:
                         out += alphabetmin[hasa]
-            print("cle de", cle)
+            print("cle de", cleR)
             return out
         
 
@@ -60,20 +60,36 @@ while encorebesoinR==True:
         
     if choix==2:
         texte=str(input('Quel est le texte a décrypter ?'))
-        texteDecrypteR=str()
+        cleR = str(input("Quelle est la clé ?"))
+
 
         
 
         
-        def decryptageR(lettre,cle):
-            if lettre.isupper() or lettre.isspace():
-                return lettre
-            else:
-                return ''
-            
+        def decryptageR(texte,cleR):
+            out = ''
+            justeavant = []
+            taille = len(cleR)
+            for lettre in texte:
+                
+                if taille < len(justeavant):
+                    justeavant.pop(0)
+                    
+                if lettre.isupper():
+                    justeavantStr = ''
+                    for c in range(taille):
+                        justeavantStr += str(justeavant[c])
+                    
+                    if justeavantStr != cleR:
+                        out += lettre
+                elif lettre.isspace():
+                    out += lettre
+                else:
+                    out = out
+                justeavant.append(lettre)
+            return out
 
-        for symb in texte:
-            texteDecrypteR+=decryptageR(symb)
+        texteDecrypteR= decryptageR(texte,cleR)
 
         
         print(texteDecrypteR)
