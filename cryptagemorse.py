@@ -2,7 +2,7 @@
 """
 Created on Wed Apr 14 15:12:38 2021
 
-@author: Félix HUGUENIN
+@author: Félix 
 """
 
 encorebesoinMorse=True
