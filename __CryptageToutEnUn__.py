@@ -183,7 +183,7 @@ def cryptageR(texte,alphabetmin,alphabetmaj):
     print("cle de", cleR)
     return out
         
-debut6()
+#debut6()
 
         
                 
@@ -227,6 +227,6 @@ def debut7():
     texteDecrypteR= decryptageR(texte,cleR)
     
     print(texteDecrypteR)
-debut7()
+#debut7()
 
 
